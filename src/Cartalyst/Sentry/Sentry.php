@@ -331,7 +331,7 @@ class Sentry {
 
 		if ($remember)
 		{
-			$this->cookie->forever($toPersist);
+			$this->cookie->forever(serialize($toPersist));
 		}
 
 		// The user model can attach any handlers
