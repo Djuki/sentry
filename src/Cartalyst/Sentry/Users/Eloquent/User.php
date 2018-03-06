@@ -31,4 +31,27 @@ use Cartalyst\Sentry\Users\UserInterface;
 class User extends Model implements UserInterface {
 
 	use HasSentry;
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = array(
+        'password',
+        'reset_password_code',
+        'activation_code',
+        'persist_code',
+    );
+
+    /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = array(
+        'reset_password_code',
+        'activation_code',
+        'persist_code',
+    );
 }
